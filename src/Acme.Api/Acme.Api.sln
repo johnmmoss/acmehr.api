@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.1022
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Api", "Acme.Api\Acme.Api.csproj", "{633A1054-76F1-4928-865E-9AF520CFA9BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.Data", "Acme.Data\Acme.Data.csproj", "{9A0CB48D-8803-4780-9867-646CBAB1CCEE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{633A1054-76F1-4928-865E-9AF520CFA9BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633A1054-76F1-4928-865E-9AF520CFA9BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633A1054-76F1-4928-865E-9AF520CFA9BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A0CB48D-8803-4780-9867-646CBAB1CCEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A0CB48D-8803-4780-9867-646CBAB1CCEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A0CB48D-8803-4780-9867-646CBAB1CCEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A0CB48D-8803-4780-9867-646CBAB1CCEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
