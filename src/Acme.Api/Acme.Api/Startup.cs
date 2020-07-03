@@ -27,6 +27,12 @@ namespace Acme.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(o => o.AddPolicy("DefaultCorsPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             var connectionString = "Server=(local)\\sqlexpress;Initial Catalog=AcmeDatabase;Persist Security Info=False; integrated security=True";
@@ -46,6 +52,7 @@ namespace Acme.Api
                 app.UseHsts();
             }
 
+            app.UseCors("DefaultCorsPolicy");
             app.UseHttpsRedirection();
             app.UseMvc();
         }
