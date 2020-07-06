@@ -28,6 +28,24 @@ namespace Acme.Api.Controllers
             return Ok(employees);
         }
 
+        [HttpPost]
+        public IActionResult Post(EmployeeUpdateRequest request)
+        {
+            var current = _acmeContext.Employees.FirstOrDefault(x => x.EmployeeID == request.EmployeeID);
+
+            if (current != null)
+            {
+                current.Title = request.Title;
+                current.FirstName = request.FirstName;
+                current.LastName = request.LastName;
+                current.BirthDate = request.BirthDate;
+
+                _acmeContext.Update(current);
+                _acmeContext.SaveChanges();
+            }
+            return Ok();
+        }
+
         [HttpPut]
         public IActionResult Put(EmployeeAddRequest request)
         {
