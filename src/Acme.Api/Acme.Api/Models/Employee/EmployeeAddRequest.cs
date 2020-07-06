@@ -8,8 +8,6 @@ namespace Acme.Api.Models.Employee
 {
     public class EmployeeAddRequest
     {
-        public int EmployeeId { get; set; }
-
         public DateTime BirthDate { get; set; }
 
         public string Title { get; set; }

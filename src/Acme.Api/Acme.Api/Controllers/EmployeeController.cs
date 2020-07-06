@@ -28,10 +28,32 @@ namespace Acme.Api.Controllers
             return Ok(employees);
         }
 
-        [HttpPost]
-        public IActionResult Post(EmployeeAddRequest request)
+        [HttpPut]
+        public IActionResult Put(EmployeeAddRequest request)
         {
-            // TODO Validate request and add to database
+            var employee = new Employee();
+
+            employee.DepartmentID = 1;
+            employee.Title = request.Title;
+            employee.FirstName = request.FirstName;
+            employee.LastName = request.LastName;
+            employee.BirthDate = request.BirthDate;
+
+            _acmeContext.Employees.Add(employee);
+            _acmeContext.SaveChanges();
+
+            return Ok();
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(EmployeeDeleteRequest request)
+        {
+            var employee = _acmeContext.Employees.FirstOrDefault(x => x.EmployeeID == request.EmployeeId);
+            if (employee != null)
+            {
+                _acmeContext.Employees.Remove(employee);
+                _acmeContext.SaveChanges();
+            }
 
             return Ok();
         }
